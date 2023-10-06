@@ -8,20 +8,12 @@ import java.util.List;
 
 public class StudentDAO {
 
-    public static void main(String[] args) {
-        StudentDAO studentDAO = new StudentDAO();
-        StudentEntity student = new StudentEntity("John", "john@gmail.com");
-        studentDAO.insert(student);
-        studentDAO.getAll();
-        studentDAO.deleteById(18);
-        studentDAO.update("Jo", 5);
-        studentDAO.getAll();
-        studentDAO.getById(5);
-    }
-
     public void getAll() {
         try (Session session = HibernateSession.getSession()) {
-            List<StudentEntity> list = session.createQuery("SELECT A from StudentEntity A ", StudentEntity.class).list();
+            List list = session.createQuery
+                    ("from StudentEntity").list();
+//            List<StudentEntity> list = session.createQuery
+//                    ("SELECT A from StudentEntity A ", StudentEntity.class).list();
             System.out.println(list);
         }
     }
@@ -77,6 +69,24 @@ public class StudentDAO {
             }
             transaction.commit();
         } catch (Exception e) {
+            if (transaction != null) {
+                transaction.rollback();
+            }
+            e.printStackTrace();
+        }
+    }
+
+    public void getByIdNew(int num) {
+        Transaction transaction = null;
+        try (Session session = HibernateSession.getSession()) {
+            transaction = session.beginTransaction();
+            StudentEntity student = session.get(StudentEntity.class, num);
+            if (student == null) {
+                System.out.println("Student not found !");
+            } else {
+                System.out.println(student);
+            }
+        }catch (Exception e) {
             if (transaction != null) {
                 transaction.rollback();
             }
