@@ -4,16 +4,14 @@ import org.hibernate.Session;
 import org.hibernate.Transaction;
 import org.hibernate.query.Query;
 import ua.javaPro.hibernatePractice.entity.StudentEntity;
+
 import java.util.List;
-import java.util.Objects;
 
 public class StudentDAO {
     public void getAll() {
         try (Session session = HibernateSession.getSession()) {
             List list = session.createQuery
                     ("from StudentEntity").list();
-//            List<StudentEntity> list = session.createQuery
-//                    ("SELECT A from StudentEntity A ", StudentEntity.class).list();
             System.out.println(list);
         }
     }
@@ -25,26 +23,6 @@ public class StudentDAO {
             session.save(student);
             transaction.commit();
             System.out.println("Data is Added");
-        } catch (Exception e) {
-            if (transaction != null) {
-                transaction.rollback();
-            }
-            e.printStackTrace();
-        }
-    }
-
-    public void deleteById(int number) {
-        Transaction transaction = null;
-        try (Session session = HibernateSession.getSession()) {
-            transaction = session.beginTransaction();
-            StudentEntity student = session.get(StudentEntity.class, number);
-            if (student != null) {
-                Query query = session.createQuery("DELETE FROM StudentEntity WHERE id = :id");
-                query.setParameter("id", number);
-                int result = query.executeUpdate();
-                System.out.println("Rows affected: " + result);
-            }
-            transaction.commit();
         } catch (Exception e) {
             if (transaction != null) {
                 transaction.rollback();
@@ -76,7 +54,7 @@ public class StudentDAO {
         }
     }
 
-    public void getByIdNew(int num) {
+    public void getByIdWithoutQuery(int num) {
         Transaction transaction = null;
         try (Session session = HibernateSession.getSession()) {
             transaction = session.beginTransaction();
@@ -87,27 +65,28 @@ public class StudentDAO {
                 System.out.println(student);
             }
             transaction.commit();
-        }catch (Exception e) {
+        } catch (Exception e) {
             if (transaction != null) {
                 transaction.rollback();
             }
             e.printStackTrace();
         }
     }
-    public void getByName(String name){
+
+    public void getByName(String name) {
         Transaction transaction = null;
-        try (Session session = HibernateSession.getSession()){
+        try (Session session = HibernateSession.getSession()) {
             transaction = session.beginTransaction();
             Query query = session.createQuery("from StudentEntity where name = :name");
             query.setParameter("name", name);
-            List <StudentEntity> listStudents = query.getResultList();
-                if(listStudents != null && !listStudents.isEmpty())
-                    System.out.println(listStudents);
-                else {
-                    System.out.println("There is no name such " + name);
-                }
+            List<StudentEntity> listStudents = query.getResultList();
+            if (listStudents != null && !listStudents.isEmpty())
+                System.out.println(listStudents);
+            else {
+                System.out.println("There is no name such " + name);
+            }
             transaction.commit();
-        }catch (Exception e) {
+        } catch (Exception e) {
             if (transaction != null) {
                 transaction.rollback();
             }
@@ -124,6 +103,58 @@ public class StudentDAO {
             query.setParameter("id", number);
             int result = query.executeUpdate();
             System.out.println("Rows affected: " + result);
+            transaction.commit();
+        } catch (Exception e) {
+            if (transaction != null) {
+                transaction.rollback();
+            }
+            e.printStackTrace();
+        }
+    }
+
+    public void updateWithoutQuery(String name, int number) {
+        Transaction transaction = null;
+        try (Session session = HibernateSession.getSession()) {
+            transaction = session.beginTransaction();
+            StudentEntity student = session.get(StudentEntity.class, number);
+            student.setName(name);
+            System.out.println(student);
+            transaction.commit();
+        } catch (Exception e) {
+            if (transaction != null) {
+                transaction.rollback();
+            }
+            e.printStackTrace();
+        }
+    }
+
+    public void deleteById(int number) {
+        Transaction transaction = null;
+        try (Session session = HibernateSession.getSession()) {
+            transaction = session.beginTransaction();
+            StudentEntity student = session.get(StudentEntity.class, number);
+            if (student != null) {
+                Query query = session.createQuery("DELETE FROM StudentEntity WHERE id = :id");
+                query.setParameter("id", number);
+                int result = query.executeUpdate();
+                System.out.println("Rows affected: " + result);
+            }
+            transaction.commit();
+        } catch (Exception e) {
+            if (transaction != null) {
+                transaction.rollback();
+            }
+            e.printStackTrace();
+        }
+    }
+
+    public void deleteByIdWithoutQuery(int number) {
+        Transaction transaction = null;
+        try (Session session = HibernateSession.getSession()) {
+            transaction = session.beginTransaction();
+            StudentEntity student = session.get(StudentEntity.class, number);
+            session.remove(student);
+            System.out.println("Student removed from data base");
             transaction.commit();
         } catch (Exception e) {
             if (transaction != null) {
