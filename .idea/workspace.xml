@@ -4,9 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="96e93861-78b0-4b37-a061-ccf10dd97256" name="Changes" comment="add1">
-      <change afterPath="$PROJECT_DIR$/src/main/java/ua/javaPro/hibernatePractice/MainSessionHibernateQueries.java" afterDir="false" />
+    <list default="true" id="96e93861-78b0-4b37-a061-ccf10dd97256" name="Changes" comment="06102023">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ua/javaPro/hibernatePractice/MainSessionHibernateQueries.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ua/javaPro/hibernatePractice/MainSessionHibernateQueries.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ua/javaPro/hibernatePractice/StudentDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ua/javaPro/hibernatePractice/StudentDAO.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -24,6 +24,19 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">
+    <option name="selectedUrlAndAccountId">
+      <UrlAndAccount>
+        <option name="accountId" value="fabfe41a-8684-4cce-986e-84da512ef7e6" />
+        <option name="url" value="https://github.com/Artur2082/HybernatePractice.git" />
+      </UrlAndAccount>
+    </option>
+  </component>
   <component name="ProjectId" id="2P0hAzjCrti1bzW3yWh3spEu23u" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
@@ -36,7 +49,7 @@
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/Артур/IdeaProjects/HybernatePractice&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/Артур/IdeaProjects/Java_Pro/Java_Pro_26.11.2022&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
@@ -109,7 +122,13 @@
       <workItem from="1696227561115" duration="1037000" />
       <workItem from="1696355632975" duration="1335000" />
       <workItem from="1696485198862" duration="4525000" />
-      <workItem from="1696572545125" duration="623000" />
+      <workItem from="1696572545125" duration="2032000" />
+      <workItem from="1696751884571" duration="735000" />
+      <workItem from="1696753970431" duration="9000" />
+      <workItem from="1696754049681" duration="17000" />
+      <workItem from="1696836114861" duration="581000" />
+      <workItem from="1696837283647" duration="6000" />
+      <workItem from="1697092849663" duration="3642000" />
     </task>
     <task id="LOCAL-00001" summary="add1">
       <created>1682921004022</created>
@@ -118,7 +137,21 @@
       <option name="project" value="LOCAL" />
       <updated>1682921004022</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="06102023">
+      <created>1696573193761</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1696573193762</updated>
+    </task>
+    <task id="LOCAL-00003" summary="06102023">
+      <created>1696573370177</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1696573370177</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -137,7 +170,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="add1" />
-    <option name="LAST_COMMIT_MESSAGE" value="add1" />
+    <MESSAGE value="06102023" />
+    <option name="LAST_COMMIT_MESSAGE" value="06102023" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

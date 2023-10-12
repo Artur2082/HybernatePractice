@@ -5,9 +5,9 @@ import org.hibernate.Transaction;
 import org.hibernate.query.Query;
 import ua.javaPro.hibernatePractice.entity.StudentEntity;
 import java.util.List;
+import java.util.Objects;
 
 public class StudentDAO {
-
     public void getAll() {
         try (Session session = HibernateSession.getSession()) {
             List list = session.createQuery
@@ -86,6 +86,27 @@ public class StudentDAO {
             } else {
                 System.out.println(student);
             }
+            transaction.commit();
+        }catch (Exception e) {
+            if (transaction != null) {
+                transaction.rollback();
+            }
+            e.printStackTrace();
+        }
+    }
+    public void getByName(String name){
+        Transaction transaction = null;
+        try (Session session = HibernateSession.getSession()){
+            transaction = session.beginTransaction();
+            Query query = session.createQuery("from StudentEntity where name = :name");
+            query.setParameter("name", name);
+            List <StudentEntity> listStudents = query.getResultList();
+                if(listStudents != null && !listStudents.isEmpty())
+                    System.out.println(listStudents);
+                else {
+                    System.out.println("There is no name such " + name);
+                }
+            transaction.commit();
         }catch (Exception e) {
             if (transaction != null) {
                 transaction.rollback();
