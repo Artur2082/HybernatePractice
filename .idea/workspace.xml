@@ -4,10 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="96e93861-78b0-4b37-a061-ccf10dd97256" name="Changes" comment="12102023">
+    <list default="true" id="96e93861-78b0-4b37-a061-ccf10dd97256" name="Changes" comment="12102023 22:23">
+      <change afterPath="$PROJECT_DIR$/src/main/java/ua/javaPro/hibernatePractice/entity/Details.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ua/javaPro/hibernatePractice/MainSessionHibernateQueries.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ua/javaPro/hibernatePractice/MainSessionHibernateQueries.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ua/javaPro/hibernatePractice/HibernateSession.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ua/javaPro/hibernatePractice/config/HibernateSession.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ua/javaPro/hibernatePractice/MainSessionHibernateQueries.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ua/javaPro/hibernatePractice/MainStudentDAO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ua/javaPro/hibernatePractice/StudentDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ua/javaPro/hibernatePractice/StudentDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ua/javaPro/hibernatePractice/entity/StudentEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ua/javaPro/hibernatePractice/entity/StudentEntity.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -63,13 +66,13 @@
     ]
   }
 }</component>
-  <component name="RunManager" selected="Application.MainSessionHibernateQueries">
-    <configuration name="MainSessionHibernateQueries" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="ua.javaPro.hibernatePractice.MainSessionHibernateQueries" />
+  <component name="RunManager" selected="Application.MainStudentDAO">
+    <configuration name="MainStudentDAO" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="ua.javaPro.hibernatePractice.MainStudentDAO" />
       <module name="HibernatePractice" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="ua.javaPro.hibernatePractice.*" />
+          <option name="PATTERN" value="ua.javaPro.hibernatePractice.config.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -82,7 +85,7 @@
       <module name="HibernatePractice" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="ua.javaPro.hibernatePractice.*" />
+          <option name="PATTERN" value="ua.javaPro.hibernatePractice.config.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -92,7 +95,7 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.MainSessionHibernateQueries" />
+        <item itemvalue="Application.MainStudentDAO" />
         <item itemvalue="Application.StudentDAO" />
       </list>
     </recent_temporary>
@@ -129,7 +132,8 @@
       <workItem from="1696836114861" duration="581000" />
       <workItem from="1696837283647" duration="6000" />
       <workItem from="1697092849663" duration="3764000" />
-      <workItem from="1697135966588" duration="1764000" />
+      <workItem from="1697135966588" duration="1811000" />
+      <workItem from="1697190686564" duration="3736000" />
     </task>
     <task id="LOCAL-00001" summary="add1">
       <created>1682921004022</created>
@@ -159,7 +163,14 @@
       <option name="project" value="LOCAL" />
       <updated>1697098102603</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="12102023 22:23">
+      <created>1697138621335</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1697138621335</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -180,7 +191,8 @@
     <MESSAGE value="add1" />
     <MESSAGE value="06102023" />
     <MESSAGE value="12102023" />
-    <option name="LAST_COMMIT_MESSAGE" value="12102023" />
+    <MESSAGE value="12102023 22:23" />
+    <option name="LAST_COMMIT_MESSAGE" value="12102023 22:23" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

@@ -13,13 +13,16 @@ public class StudentEntity {
     private String name;
 
     private String email;
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "details_id")
+    private Details details;
 
-    public StudentEntity() {
-    }
-
-    public StudentEntity(String name, String email) {
+    public StudentEntity(String name, String email, Details details) {
         this.name = name;
         this.email = email;
+        this.details = details;
+    }
+    public StudentEntity() {
     }
 
     public Integer getId() {
@@ -46,12 +49,17 @@ public class StudentEntity {
         this.email = email;
     }
 
+    public void setDetails(Details details) {
+        this.details = details;
+    }
+
     @Override
     public String toString() {
         return "StudentEntity{" +
                 "id=" + id +
                 ", name='" + name + '\'' +
                 ", email='" + email + '\'' +
-                '}' + '\n';
+                ", details=" + details +
+                '}'+ '\n';
     }
 }

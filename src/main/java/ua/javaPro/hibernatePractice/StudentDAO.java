@@ -3,6 +3,7 @@ package ua.javaPro.hibernatePractice;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 import org.hibernate.query.Query;
+import ua.javaPro.hibernatePractice.config.HibernateSession;
 import ua.javaPro.hibernatePractice.entity.StudentEntity;
 
 import java.util.List;
@@ -20,7 +21,7 @@ public class StudentDAO {
         Transaction transaction = null;
         try (Session session = HibernateSession.getSession()) {
             transaction = session.beginTransaction();
-            session.save(student);
+            session.persist(student);
             transaction.commit();
             System.out.println("Data is Added");
         } catch (Exception e) {

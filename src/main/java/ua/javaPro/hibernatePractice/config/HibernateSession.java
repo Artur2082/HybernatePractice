@@ -1,4 +1,4 @@
-package ua.javaPro.hibernatePractice;
+package ua.javaPro.hibernatePractice.config;
 
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
@@ -6,6 +6,7 @@ import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
 import org.hibernate.cfg.Configuration;
 import org.hibernate.cfg.Environment;
 import org.hibernate.service.ServiceRegistry;
+import ua.javaPro.hibernatePractice.entity.Details;
 import ua.javaPro.hibernatePractice.entity.StudentEntity;
 
 public class HibernateSession {
@@ -22,6 +23,7 @@ public class HibernateSession {
         Configuration configuration = new Configuration();
         configuration.addPackage("ua.javaPro.hibernatePractice.entity");
         configuration.addAnnotatedClass(StudentEntity.class);
+        configuration.addAnnotatedClass(Details.class);
         configuration.setProperty(Environment.URL, "jdbc:mysql://localhost:3306/dbtest");
         configuration.setProperty(Environment.DRIVER, "com.mysql.cj.jdbc.Driver");
         configuration.setProperty(Environment.USER, "root");
