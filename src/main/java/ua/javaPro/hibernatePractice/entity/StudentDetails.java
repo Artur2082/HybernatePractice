@@ -4,7 +4,7 @@ import jakarta.persistence.*;
 
 @Entity
 @Table(schema = "dbtest", name = "details")
-public class Details {
+public class StudentDetails {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
@@ -12,11 +12,13 @@ public class Details {
     private String phone;
 
     private String city;
+    @OneToOne(mappedBy = "details", cascade = CascadeType.ALL)
+    private StudentEntity student;
 
-    public Details() {
+    public StudentDetails() {
     }
 
-    public Details(String phone, String city) {
+    public StudentDetails(String phone, String city) {
         this.phone = phone;
         this.city = city;
     }

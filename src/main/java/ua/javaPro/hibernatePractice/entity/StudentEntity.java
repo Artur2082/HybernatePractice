@@ -15,9 +15,9 @@ public class StudentEntity {
     private String email;
     @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "details_id")
-    private Details details;
+    private StudentDetails details;
 
-    public StudentEntity(String name, String email, Details details) {
+    public StudentEntity(String name, String email, StudentDetails details) {
         this.name = name;
         this.email = email;
         this.details = details;
@@ -49,7 +49,7 @@ public class StudentEntity {
         this.email = email;
     }
 
-    public void setDetails(Details details) {
+    public void setDetails(StudentDetails details) {
         this.details = details;
     }
 
