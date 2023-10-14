@@ -13,7 +13,7 @@ public class StudentDetails {
 
     private String city;
     @OneToOne(mappedBy = "details", cascade = CascadeType.ALL)
-    private StudentEntity student;
+    private StudentOneToOne student;
 
     public StudentDetails() {
     }

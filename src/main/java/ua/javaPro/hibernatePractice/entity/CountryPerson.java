@@ -7,7 +7,7 @@ import java.util.List;
 
 @Entity
 @Table(schema = "dbtest", name = "country")
-public class Country {
+public class CountryPerson {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
@@ -18,17 +18,17 @@ public class Country {
     @Column(name = "max_salary")
     private int maxSalary;
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "country")
-    private List<Person> people;
-    public Country() {
+    private List<PersonManyToOne> people;
+    public CountryPerson() {
     }
 
-    public Country(String name, String language, int minSalary, int maxSalary) {
+    public CountryPerson(String name, String language, int minSalary, int maxSalary) {
         this.name = name;
         this.language = language;
         this.minSalary = minSalary;
         this.maxSalary = maxSalary;
     }
-    public void addPersonToCountry(Person person){
+    public void addPersonToCountry(PersonManyToOne person){
         if(people == null){
             people = new ArrayList<>();
         }
@@ -76,11 +76,11 @@ public class Country {
         this.maxSalary = maxSalary;
     }
 
-    public List<Person> getPeople() {
+    public List<PersonManyToOne> getPeople() {
         return people;
     }
 
-    public void setPeople(List<Person> people) {
+    public void setPeople(List<PersonManyToOne> people) {
         this.people = people;
     }
 

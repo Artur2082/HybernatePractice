@@ -4,7 +4,7 @@ import org.hibernate.Session;
 import org.hibernate.Transaction;
 import org.hibernate.query.Query;
 import ua.javaPro.hibernatePractice.config.HibernateSession;
-import ua.javaPro.hibernatePractice.entity.StudentEntity;
+import ua.javaPro.hibernatePractice.entity.StudentOneToOne;
 
 import java.util.List;
 
@@ -12,12 +12,12 @@ public class StudentDAO {
     public void getAll() {
         try (Session session = HibernateSession.getSession()) {
             List list = session.createQuery
-                    ("from StudentEntity").list();
+                    ("from StudentOneToOne").list();
             System.out.println(list);
         }
     }
 
-    public void insert(StudentEntity student) {
+    public void insert(StudentOneToOne student) {
         Transaction transaction = null;
         try (Session session = HibernateSession.getSession()) {
             transaction = session.beginTransaction();
@@ -34,14 +34,14 @@ public class StudentDAO {
 
     public void getById(int number) {
         Transaction transaction = null;
-        StudentEntity student;
+        StudentOneToOne student;
         try (Session session = HibernateSession.getSession()) {
             transaction = session.beginTransaction();
-            Query query = session.createQuery(" FROM StudentEntity WHERE id = :id");
+            Query query = session.createQuery(" FROM StudentOneToOne WHERE id = :id");
             query.setParameter("id", number);
             List result = query.getResultList();
             if (result != null && !result.isEmpty()) {
-                student = (StudentEntity) result.get(0);
+                student = (StudentOneToOne) result.get(0);
                 System.out.println("Finding by id = " + number + '\n' + student);
             } else {
                 System.out.println("id = " + number + '\n' + "There is no such ID in data base");
@@ -59,7 +59,7 @@ public class StudentDAO {
         Transaction transaction = null;
         try (Session session = HibernateSession.getSession()) {
             transaction = session.beginTransaction();
-            StudentEntity student = session.get(StudentEntity.class, num);
+            StudentOneToOne student = session.get(StudentOneToOne.class, num);
             if (student == null) {
                 System.out.println("Student not found !");
             } else {
@@ -78,9 +78,9 @@ public class StudentDAO {
         Transaction transaction = null;
         try (Session session = HibernateSession.getSession()) {
             transaction = session.beginTransaction();
-            Query query = session.createQuery("from StudentEntity where name = :name");
+            Query query = session.createQuery("from StudentOneToOne where name = :name");
             query.setParameter("name", name);
-            List<StudentEntity> listStudents = query.getResultList();
+            List<StudentOneToOne> listStudents = query.getResultList();
             if (listStudents != null && !listStudents.isEmpty())
                 System.out.println(listStudents);
             else {
@@ -99,7 +99,7 @@ public class StudentDAO {
         Transaction transaction = null;
         try (Session session = HibernateSession.getSession()) {
             transaction = session.beginTransaction();
-            Query query = session.createQuery("UPDATE StudentEntity set name = :name WHERE id = :id");
+            Query query = session.createQuery("UPDATE StudentOneToOne set name = :name WHERE id = :id");
             query.setParameter("name", name);
             query.setParameter("id", number);
             int result = query.executeUpdate();
@@ -117,7 +117,7 @@ public class StudentDAO {
         Transaction transaction = null;
         try (Session session = HibernateSession.getSession()) {
             transaction = session.beginTransaction();
-            StudentEntity student = session.get(StudentEntity.class, number);
+            StudentOneToOne student = session.get(StudentOneToOne.class, number);
             student.setName(name);
             System.out.println(student);
             transaction.commit();
@@ -133,9 +133,9 @@ public class StudentDAO {
         Transaction transaction = null;
         try (Session session = HibernateSession.getSession()) {
             transaction = session.beginTransaction();
-            StudentEntity student = session.get(StudentEntity.class, number);
+            StudentOneToOne student = session.get(StudentOneToOne.class, number);
             if (student != null) {
-                Query query = session.createQuery("DELETE FROM StudentEntity WHERE id = :id");
+                Query query = session.createQuery("DELETE FROM StudentOneToOne WHERE id = :id");
                 query.setParameter("id", number);
                 int result = query.executeUpdate();
                 System.out.println("Rows affected: " + result);
@@ -153,7 +153,7 @@ public class StudentDAO {
         Transaction transaction = null;
         try (Session session = HibernateSession.getSession()) {
             transaction = session.beginTransaction();
-            StudentEntity student = session.get(StudentEntity.class, number);
+            StudentOneToOne student = session.get(StudentOneToOne.class, number);
             session.remove(student);
             System.out.println("Student removed from data base");
             transaction.commit();

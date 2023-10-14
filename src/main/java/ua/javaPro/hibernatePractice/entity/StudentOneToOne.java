@@ -4,7 +4,7 @@ import jakarta.persistence.*;
 
 @Entity
 @Table(schema = "dbtest", name = "student")
-public class StudentEntity {
+public class StudentOneToOne {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -17,12 +17,12 @@ public class StudentEntity {
     @JoinColumn(name = "details_id")
     private StudentDetails details;
 
-    public StudentEntity(String name, String email, StudentDetails details) {
+    public StudentOneToOne(String name, String email, StudentDetails details) {
         this.name = name;
         this.email = email;
         this.details = details;
     }
-    public StudentEntity() {
+    public StudentOneToOne() {
     }
 
     public Integer getId() {

@@ -3,8 +3,8 @@ package ua.javaPro.hibernatePractice;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 import ua.javaPro.hibernatePractice.config.HibernateSession;
-import ua.javaPro.hibernatePractice.entity.Country;
-import ua.javaPro.hibernatePractice.entity.Person;
+import ua.javaPro.hibernatePractice.entity.CountryPerson;
+import ua.javaPro.hibernatePractice.entity.PersonManyToOne;
 
 
 import java.util.List;
@@ -13,11 +13,11 @@ public class PersonDAO {
     public void getAll() {
         try (Session session = HibernateSession.getSession()) {
             List list = session.createQuery
-                    ("from Person").list();
+                    ("from PersonManyToOne").list();
             System.out.println(list);
         }
     }
-    public void insert (Country country) {
+    public void insert (CountryPerson country) {
         Transaction transaction = null;
         try (Session session = HibernateSession.getSession()) {
             transaction = session.beginTransaction();
@@ -35,7 +35,7 @@ public class PersonDAO {
         Transaction transaction = null;
         try (Session session = HibernateSession.getSession()) {
             transaction = session.beginTransaction();
-            Country country = session.get(Country.class, num);
+            CountryPerson country = session.get(CountryPerson.class, num);
             if (country == null) {
                 System.out.println("Country not found !");
             } else {
@@ -54,7 +54,7 @@ public class PersonDAO {
         Transaction transaction = null;
         try (Session session = HibernateSession.getSession()) {
             transaction = session.beginTransaction();
-            Person person = session.get(Person.class, num);
+            PersonManyToOne person = session.get(PersonManyToOne.class, num);
             if (person == null) {
                 System.out.println("Country not found !");
             } else {
@@ -73,7 +73,7 @@ public class PersonDAO {
         Transaction transaction = null;
         try (Session session = HibernateSession.getSession()) {
             transaction = session.beginTransaction();
-            Person person = session.get(Person.class, number);
+            PersonManyToOne person = session.get(PersonManyToOne.class, number);
             person.setName(name);
             System.out.println(person);
             transaction.commit();
@@ -88,7 +88,7 @@ public class PersonDAO {
         Transaction transaction = null;
         try (Session session = HibernateSession.getSession()) {
             transaction = session.beginTransaction();
-            Person person = session.get(Person.class, number);
+            PersonManyToOne person = session.get(PersonManyToOne.class, number);
             session.remove(person);
             System.out.println("person removed from data base");
             transaction.commit();

@@ -4,7 +4,7 @@ import jakarta.persistence.*;
 
 @Entity
 @Table(schema = "dbtest", name = "person")
-public class Person {
+public class PersonManyToOne {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
@@ -13,12 +13,12 @@ public class Person {
     private int salary;
     @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "country_id")
-    private Country country;
+    private CountryPerson country;
 
-    public Person() {
+    public PersonManyToOne() {
     }
 
-    public Person(String name, String gender, int salary) {
+    public PersonManyToOne(String name, String gender, int salary) {
         this.name = name;
         this.gender = gender;
         this.salary = salary;
@@ -56,11 +56,11 @@ public class Person {
         this.salary = salary;
     }
 
-    public Country getCountry() {
+    public CountryPerson getCountry() {
         return country;
     }
 
-    public void setCountry(Country country) {
+    public void setCountry(CountryPerson country) {
         this.country = country;
     }
 
