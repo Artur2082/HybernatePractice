@@ -6,10 +6,13 @@ import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
 import org.hibernate.cfg.Configuration;
 import org.hibernate.cfg.Environment;
 import org.hibernate.service.ServiceRegistry;
-import ua.javaPro.hibernatePractice.entity.CountryPerson;
-import ua.javaPro.hibernatePractice.entity.PersonManyToOne;
-import ua.javaPro.hibernatePractice.entity.StudentDetails;
-import ua.javaPro.hibernatePractice.entity.StudentOneToOne;
+import ua.javaPro.hibernatePractice.manyToOne.CountryPerson;
+import ua.javaPro.hibernatePractice.manyToOne.Person;
+import ua.javaPro.hibernatePractice.oneToOne.Details;
+import ua.javaPro.hibernatePractice.oneToOne.Student;
+import ua.javaPro.hibernatePractice.manyToMany.Lesson;
+import ua.javaPro.hibernatePractice.manyToMany.LessonSchedule;
+import ua.javaPro.hibernatePractice.manyToMany.Schedule;
 
 public class HibernateSession {
     private static SessionFactory sessionFactory;
@@ -24,10 +27,13 @@ public class HibernateSession {
     public static void initSessionFactory() {
         Configuration configuration = new Configuration();
         configuration.addPackage("ua.javaPro.hibernatePractice.entity");
-        configuration.addAnnotatedClass(StudentOneToOne.class);
-        configuration.addAnnotatedClass(StudentDetails.class);
-        configuration.addAnnotatedClass(PersonManyToOne.class);
+        configuration.addAnnotatedClass(Student.class);
+        configuration.addAnnotatedClass(Details.class);
+        configuration.addAnnotatedClass(Person.class);
         configuration.addAnnotatedClass(CountryPerson.class);
+        configuration.addAnnotatedClass(Lesson.class);
+        configuration.addAnnotatedClass(Schedule.class);
+        configuration.addAnnotatedClass(LessonSchedule.class);
         configuration.setProperty(Environment.URL, "jdbc:mysql://localhost:3306/dbtest");
         configuration.setProperty(Environment.DRIVER, "com.mysql.cj.jdbc.Driver");
         configuration.setProperty(Environment.USER, "root");

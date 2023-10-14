@@ -1,4 +1,4 @@
-package ua.javaPro.hibernatePractice.entity;
+package ua.javaPro.hibernatePractice.manyToOne;
 
 import jakarta.persistence.*;
 
@@ -17,8 +17,9 @@ public class CountryPerson {
     private int minSalary;
     @Column(name = "max_salary")
     private int maxSalary;
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "country")
-    private List<PersonManyToOne> people;
+    @OneToMany(cascade = CascadeType.ALL,
+            mappedBy = "country", fetch = FetchType.EAGER)
+    private List<Person> people;
     public CountryPerson() {
     }
 
@@ -28,7 +29,7 @@ public class CountryPerson {
         this.minSalary = minSalary;
         this.maxSalary = maxSalary;
     }
-    public void addPersonToCountry(PersonManyToOne person){
+    public void addPersonToCountry(Person person){
         if(people == null){
             people = new ArrayList<>();
         }
@@ -76,11 +77,11 @@ public class CountryPerson {
         this.maxSalary = maxSalary;
     }
 
-    public List<PersonManyToOne> getPeople() {
+    public List<Person> getPeople() {
         return people;
     }
 
-    public void setPeople(List<PersonManyToOne> people) {
+    public void setPeople(List<Person> people) {
         this.people = people;
     }
 

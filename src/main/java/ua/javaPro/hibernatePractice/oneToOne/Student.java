@@ -1,10 +1,10 @@
-package ua.javaPro.hibernatePractice.entity;
+package ua.javaPro.hibernatePractice.oneToOne;
 
 import jakarta.persistence.*;
 
 @Entity
 @Table(schema = "dbtest", name = "student")
-public class StudentOneToOne {
+public class Student {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -15,14 +15,14 @@ public class StudentOneToOne {
     private String email;
     @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "details_id")
-    private StudentDetails details;
+    private Details details;
 
-    public StudentOneToOne(String name, String email, StudentDetails details) {
+    public Student(String name, String email, Details details) {
         this.name = name;
         this.email = email;
         this.details = details;
     }
-    public StudentOneToOne() {
+    public Student() {
     }
 
     public Integer getId() {
@@ -49,7 +49,7 @@ public class StudentOneToOne {
         this.email = email;
     }
 
-    public void setDetails(StudentDetails details) {
+    public void setDetails(Details details) {
         this.details = details;
     }
 

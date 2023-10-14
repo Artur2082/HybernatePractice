@@ -1,10 +1,10 @@
-package ua.javaPro.hibernatePractice.entity;
+package ua.javaPro.hibernatePractice.manyToOne;
 
 import jakarta.persistence.*;
 
 @Entity
 @Table(schema = "dbtest", name = "person")
-public class PersonManyToOne {
+public class Person {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
@@ -15,10 +15,10 @@ public class PersonManyToOne {
     @JoinColumn(name = "country_id")
     private CountryPerson country;
 
-    public PersonManyToOne() {
+    public Person() {
     }
 
-    public PersonManyToOne(String name, String gender, int salary) {
+    public Person(String name, String gender, int salary) {
         this.name = name;
         this.gender = gender;
         this.salary = salary;

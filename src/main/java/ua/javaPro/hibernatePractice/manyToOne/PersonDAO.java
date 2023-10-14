@@ -1,10 +1,8 @@
-package ua.javaPro.hibernatePractice;
+package ua.javaPro.hibernatePractice.manyToOne;
 
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 import ua.javaPro.hibernatePractice.config.HibernateSession;
-import ua.javaPro.hibernatePractice.entity.CountryPerson;
-import ua.javaPro.hibernatePractice.entity.PersonManyToOne;
 
 
 import java.util.List;
@@ -13,7 +11,7 @@ public class PersonDAO {
     public void getAll() {
         try (Session session = HibernateSession.getSession()) {
             List list = session.createQuery
-                    ("from PersonManyToOne").list();
+                    ("from Person").list();
             System.out.println(list);
         }
     }
@@ -54,7 +52,7 @@ public class PersonDAO {
         Transaction transaction = null;
         try (Session session = HibernateSession.getSession()) {
             transaction = session.beginTransaction();
-            PersonManyToOne person = session.get(PersonManyToOne.class, num);
+            Person person = session.get(Person.class, num);
             if (person == null) {
                 System.out.println("Country not found !");
             } else {
@@ -73,7 +71,7 @@ public class PersonDAO {
         Transaction transaction = null;
         try (Session session = HibernateSession.getSession()) {
             transaction = session.beginTransaction();
-            PersonManyToOne person = session.get(PersonManyToOne.class, number);
+            Person person = session.get(Person.class, number);
             person.setName(name);
             System.out.println(person);
             transaction.commit();
@@ -88,7 +86,7 @@ public class PersonDAO {
         Transaction transaction = null;
         try (Session session = HibernateSession.getSession()) {
             transaction = session.beginTransaction();
-            PersonManyToOne person = session.get(PersonManyToOne.class, number);
+            Person person = session.get(Person.class, number);
             session.remove(person);
             System.out.println("person removed from data base");
             transaction.commit();

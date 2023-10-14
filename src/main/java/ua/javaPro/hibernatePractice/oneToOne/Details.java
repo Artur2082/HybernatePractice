@@ -1,10 +1,11 @@
-package ua.javaPro.hibernatePractice.entity;
+package ua.javaPro.hibernatePractice.oneToOne;
 
 import jakarta.persistence.*;
+import ua.javaPro.hibernatePractice.oneToOne.Student;
 
 @Entity
 @Table(schema = "dbtest", name = "details")
-public class StudentDetails {
+public class Details {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
@@ -13,12 +14,12 @@ public class StudentDetails {
 
     private String city;
     @OneToOne(mappedBy = "details", cascade = CascadeType.ALL)
-    private StudentOneToOne student;
+    private Student student;
 
-    public StudentDetails() {
+    public Details() {
     }
 
-    public StudentDetails(String phone, String city) {
+    public Details(String phone, String city) {
         this.phone = phone;
         this.city = city;
     }
