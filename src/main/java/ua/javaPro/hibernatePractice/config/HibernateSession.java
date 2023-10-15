@@ -11,7 +11,6 @@ import ua.javaPro.hibernatePractice.manyToOne.Person;
 import ua.javaPro.hibernatePractice.oneToOne.Details;
 import ua.javaPro.hibernatePractice.oneToOne.Student;
 import ua.javaPro.hibernatePractice.manyToMany.Lesson;
-import ua.javaPro.hibernatePractice.manyToMany.LessonSchedule;
 import ua.javaPro.hibernatePractice.manyToMany.Schedule;
 
 public class HibernateSession {
@@ -33,7 +32,6 @@ public class HibernateSession {
         configuration.addAnnotatedClass(CountryPerson.class);
         configuration.addAnnotatedClass(Lesson.class);
         configuration.addAnnotatedClass(Schedule.class);
-        configuration.addAnnotatedClass(LessonSchedule.class);
         configuration.setProperty(Environment.URL, "jdbc:mysql://localhost:3306/dbtest");
         configuration.setProperty(Environment.DRIVER, "com.mysql.cj.jdbc.Driver");
         configuration.setProperty(Environment.USER, "root");

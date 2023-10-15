@@ -4,20 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="96e93861-78b0-4b37-a061-ccf10dd97256" name="Changes" comment="14102023 11:09">
-      <change afterPath="$PROJECT_DIR$/src/main/java/ua/javaPro/hibernatePractice/manyToMany/Lesson.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ua/javaPro/hibernatePractice/manyToMany/LessonSchedule.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ua/javaPro/hibernatePractice/manyToMany/Schedule.java" afterDir="false" />
+    <list default="true" id="96e93861-78b0-4b37-a061-ccf10dd97256" name="Changes" comment="14102023 22:09">
+      <change afterPath="$PROJECT_DIR$/src/main/java/ua/javaPro/hibernatePractice/manyToMany/LessonScheduleDAO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ua/javaPro/hibernatePractice/manyToMany/MainLessonSchedule.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ua/javaPro/hibernatePractice/MainPersonDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ua/javaPro/hibernatePractice/manyToOne/MainPersonDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ua/javaPro/hibernatePractice/MainStudentDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ua/javaPro/hibernatePractice/oneToOne/MainStudentDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ua/javaPro/hibernatePractice/PersonDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ua/javaPro/hibernatePractice/manyToOne/PersonDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ua/javaPro/hibernatePractice/StudentDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ua/javaPro/hibernatePractice/oneToOne/StudentDAO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ua/javaPro/hibernatePractice/config/HibernateSession.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ua/javaPro/hibernatePractice/config/HibernateSession.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ua/javaPro/hibernatePractice/entity/CountryPerson.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ua/javaPro/hibernatePractice/manyToOne/CountryPerson.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ua/javaPro/hibernatePractice/entity/PersonManyToOne.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ua/javaPro/hibernatePractice/manyToOne/PersonManyToOne.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ua/javaPro/hibernatePractice/entity/StudentDetails.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ua/javaPro/hibernatePractice/oneToOne/Details.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ua/javaPro/hibernatePractice/entity/StudentOneToOne.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ua/javaPro/hibernatePractice/oneToOne/Student.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ua/javaPro/hibernatePractice/manyToMany/Lesson.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ua/javaPro/hibernatePractice/manyToMany/Lesson.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ua/javaPro/hibernatePractice/manyToMany/LessonSchedule.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ua/javaPro/hibernatePractice/manyToMany/Schedule.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ua/javaPro/hibernatePractice/manyToMany/Schedule.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -73,7 +67,20 @@
     ]
   }
 }</component>
-  <component name="RunManager" selected="Application.MainPersonDAO">
+  <component name="RunManager" selected="Application.MainLessonSchedule">
+    <configuration name="MainLessonSchedule" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="ua.javaPro.hibernatePractice.manyToMany.MainLessonSchedule" />
+      <module name="HibernatePractice" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="ua.javaPro.hibernatePractice.manyToMany.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="MainPersonDAO" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="ua.javaPro.hibernatePractice.manyToOne.MainPersonDAO" />
       <module name="HibernatePractice" />
@@ -115,6 +122,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.MainLessonSchedule" />
         <item itemvalue="Application.MainPersonDAO" />
         <item itemvalue="Application.MainStudentDAO" />
         <item itemvalue="Application.StudentDAO" />
@@ -159,7 +167,10 @@
       <workItem from="1697269795414" duration="1215000" />
       <workItem from="1697272767015" duration="922000" />
       <workItem from="1697298034456" duration="1666000" />
-      <workItem from="1697308511875" duration="1924000" />
+      <workItem from="1697308511875" duration="2201000" />
+      <workItem from="1697356201446" duration="3123000" />
+      <workItem from="1697377475792" duration="5086000" />
+      <workItem from="1697389087581" duration="1119000" />
     </task>
     <task id="LOCAL-00001" summary="add1">
       <created>1682921004022</created>
@@ -217,7 +228,14 @@
       <option name="project" value="LOCAL" />
       <updated>1697270992061</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="14102023 22:09">
+      <created>1697310695719</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1697310695719</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -242,7 +260,8 @@
     <MESSAGE value="13102023 14:43" />
     <MESSAGE value="13102023 21:43" />
     <MESSAGE value="14102023 11:09" />
-    <option name="LAST_COMMIT_MESSAGE" value="14102023 11:09" />
+    <MESSAGE value="14102023 22:09" />
+    <option name="LAST_COMMIT_MESSAGE" value="14102023 22:09" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
